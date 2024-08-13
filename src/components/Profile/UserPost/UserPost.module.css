@@ -1,0 +1,43 @@
+.item {
+    color: #ffffff;
+    display: flex;
+    background: #181a31;
+    align-items: center;
+}
+
+.likeCount {
+    background: #181a31;
+}
+
+.item p {
+    background: #181a31;
+}
+
+.itemContent p {
+    background: #181a31;
+}
+
+.item img {
+    width: 40px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.postItem {
+    background: #181a31;
+    padding: 30px 20px;
+    border: 1px solid #38384f;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
+}
+
+.itemContent {
+
+}
+
+.itemUsername {
+
+}

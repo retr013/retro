@@ -1,0 +1,67 @@
+.profileInfoContainer {
+    position: relative;
+    background: #181a31;
+    border: 1px solid #38384f;
+    border-radius: 0 0 20px 20px;
+    padding-bottom: 10px;
+}
+
+.picB {
+    overflow: hidden;
+    height: 200px;
+    margin-bottom: 80px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.picBimg {
+    width: 100%;
+    object-fit: contain;
+}
+
+.profileInfo {
+    background: #181a31;
+    margin: 10px;
+    padding: 0 10px;
+}
+
+.profileInfoTop {
+    background: #181a31;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.editButton {
+    border: none;
+    background: #25284b;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+}
+
+.profileInfoName {
+    font-size: 29px;
+    background: #181a31;
+    color: white;
+}
+
+.profilePic {
+    position: absolute;
+    background-position: center center;
+    background-size: cover;
+    width: 130px;
+    height: 130px;
+    display: block;
+    top: 150px;
+    left: 20px;
+    border-radius: 50%;
+    border: 5px solid #181a31;
+    z-index: 2;
+}
+
+h4 {
+    color: white;
+}

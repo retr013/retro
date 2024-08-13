@@ -1,0 +1,35 @@
+.loadButton {
+    margin: 0 auto;
+    display: block;
+    height: 50px;
+    font-size: 25px;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.loadButton:hover {
+    transform: scale(1.1);
+}
+
+.usersContainer {
+    position: relative;
+}
+
+.loadButtonContainer {
+    background: #181a31;
+    padding: 20px;
+}
+
+.loading {
+    position: absolute;
+    width: 100%;
+    background: #000;
+    height: 100%;
+    color: white;
+    font-size: 50px;
+}

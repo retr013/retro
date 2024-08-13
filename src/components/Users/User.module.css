@@ -1,0 +1,35 @@
+.imgContainer {
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.imgContainer img {
+    max-width: 120%;
+    object-fit: contain;
+}
+
+.UserContainer {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.button {
+    padding: 6px;
+    border-radius: 4px;
+    background: #ffffff;
+    color: black;
+    font-size: 15px;
+}

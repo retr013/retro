@@ -1,0 +1,70 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 30px;
+    margin-top: 20px
+}
+
+.container {
+    background: #181a31;
+    padding: 30px 20px;
+    border: 1px solid #38384f;
+    border-radius: 20px;
+    color: white;
+}
+
+::-webkit-resizer {
+    display: none;
+}
+
+h3 {
+    margin-bottom: 20px;
+    background: #181a31;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 2px;
+    border: none;
+    background: #25284b;
+    font-size: 16px;
+}
+
+textarea::placeholder {
+    color: white;
+}
+
+textarea:focus {
+    outline: 0;
+}
+
+.postTextAreaContainer {
+    display: flex;
+    background: #25284b;
+    border-radius: 10px;
+    position: relative;
+}
+
+.postTextAreaContainer button{
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: 10px;
+    min-width: 40px;
+}
+
+.postTextAreaContainer button:hover {
+    background: #32375f;
+}
+
+.sendIcon {
+    cursor: pointer;
+    color: white;
+}
+
+.sendIcon svg {
+    background: none;
+}

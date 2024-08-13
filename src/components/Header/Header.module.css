@@ -1,0 +1,28 @@
+.logo {
+    height: 70px;
+}
+
+.header {
+    background: #181a31;
+}
+
+.headerContainer {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    background: #181a31;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loginContainer {
+    color: white;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

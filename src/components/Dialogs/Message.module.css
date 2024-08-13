@@ -1,0 +1,13 @@
+.messageContainer {
+    display: flex;
+}
+
+.message {
+    background: #928282;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.messageContainer:nth-child(odd) {
+    justify-content: end;
+}

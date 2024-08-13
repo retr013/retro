@@ -1,0 +1,10 @@
+.dialog {
+    background: #181a31;
+    padding: 10px;
+    border: 1px solid #38384f;
+}
+
+.dialogText{
+    text-decoration: none;
+    color: white;
+}
