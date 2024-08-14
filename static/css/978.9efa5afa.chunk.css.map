@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/978.9efa5afa.chunk.css","mappings":"AAAA,kBACI,kBACJ,CAEA,GACI,UAAW,CACX,cACJ","sources":["components/News/News.module.css"],"sourcesContent":[".item {\n    background: #181a31;\n}\n\nh1 {\n    color: #fff;\n    font-size: 60px;\n}"],"names":[],"sourceRoot":""}
