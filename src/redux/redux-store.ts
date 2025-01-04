@@ -5,10 +5,9 @@ import profileReducer from "./profileReducer";
 import usersReducer from "./usersReducer";
 import userProfileReducerSlice from "./userProfileReducer";
 import authReducerSlice from "./authReducer";
+import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 
-
-
-let reducers = combineReducers(
+const reducers = combineReducers(
     {
         profile: profileReducer,
         dialogsReducer,
@@ -17,9 +16,12 @@ let reducers = combineReducers(
             auth: authReducerSlice
     }
 );
+// @ts-ignore
+const store = configureStore({reducer: reducers});
 
-let store = configureStore({reducer: reducers});
-
-window.store = store;
+export type RootState = ReturnType<typeof store.getState>;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch: () => AppDispatch = useDispatch
 
 export default store;

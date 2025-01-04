@@ -1,40 +1,38 @@
-import logo from './logo.svg';
-import React from "react";
-import {lazy} from "react";
-import './App.css';
+import React, { useEffect, lazy, Suspense } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import "./App.css";
+
+// Components
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
-import Dialogs from "./components/Dialogs/Dialogs";
-// import News from "./components/News/News";
-import {BrowserRouter, Route, Routes, useLocation} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import Users from "./components/Users/Users";
-import Scroll from "./components/common/scrollToTop/Scroll"
 import Login from "./components/Login/Login";
-import {ProtectedRoutes} from "./utils/ProtectedRoutes/ProtectedRoutes";
-import {Suspense, useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {fetchLoginInfo} from "./redux/authReducer";
-import {fetchProfile} from "./redux/userProfileReducer";
+import { ProtectedRoutes } from "./utils/ProtectedRoutes/ProtectedRoutes";
+import Error404 from "./utils/Error404/Error404";
+import InDevelopment from "./utils/FeatureInDevelopment/Development";
 
-const News = lazy(() => import('./components/News/News'));
+// Redux
+import { useAppDispatch, useAppSelector } from "./redux/redux-store";
+import { fetchLoginInfo } from "./redux/authReducer";
+import { fetchProfile } from "./redux/userProfileReducer";
 
+// Lazy-loaded components
+const News = lazy(() => import("./components/News/News"));
 
 function App() {
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
-    const pathname = useLocation().pathname;
+    const { pathname } = useLocation();
 
-    const {isAuth, loading} = useSelector(state => state.auth)
+    const isAuth  = useAppSelector(state => state.auth.isAuth)
 
     useEffect(() => {
-        if (!["/register", "/login", "/"].includes(pathname)) {
-            dispatch(fetchLoginInfo()).then(res => {
-                if (res.payload.data.id) dispatch(fetchProfile(res.payload.data.id));
-            });
-        }
+        dispatch(fetchLoginInfo()).then((res: { payload: any }) => {
+            if (res.payload?.data?.id) dispatch(fetchProfile(res.payload.data.id));
+        });
     }, [dispatch, isAuth]);
 
     return (
@@ -43,7 +41,6 @@ function App() {
                 <div className='app-wrapper'>
                     <Navbar/>
                     <div className='content'>
-                        <Scroll />
                         <Suspense fallback={<div><h1>Loading...</h1></div>}>
                             <Routes>
                                 <Route path={'/'} element={<ProtectedRoutes/>}>
@@ -51,8 +48,12 @@ function App() {
                                     <Route path='/profile/:userId?' element={<Profile/>}/>
                                     <Route path='/news' element={<News a='News props'/>}/>
                                     <Route path='/users' element={<Users/>}/>
+                                    <Route path='/music' element={<InDevelopment/>}/>
+                                    <Route path='/settings' element={<InDevelopment/>}/>
+                                    <Route path='/' element={<Profile/>}/>
                                 </Route>
                                 <Route path='/login' element={<Login/>}/>
+                                <Route path='*' element={<Error404/>}/>
                             </Routes>
                         </Suspense>
                     </div>

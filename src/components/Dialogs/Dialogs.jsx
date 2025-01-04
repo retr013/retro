@@ -3,7 +3,6 @@ import style from './Dialogs.module.css';
 import DialogItem from './DialogItem';
 import Message from "./Message";
 import SendIcon from '@mui/icons-material/Send';
-
 function Dialogs(props) {
 
     let textAreaRef = createRef()
@@ -37,9 +36,10 @@ function Dialogs(props) {
                 <div className={style.textArea}>
                 <textarea className={style.dialogTextArea} value={props.newMessageText} name="" ref={textAreaRef}
                           cols="10" rows="3" onChange={onMessageChange} placeholder='new message'></textarea>
-                    <button className={style.dialogTextButton} onClick={messageSend}><SendIcon/>></button>
+                    <button className={style.dialogTextButton} onClick={messageSend}><SendIcon/></button>
                 </div>
             </div>
+            <div className={style.inDevelopment}>Feature in development</div>
         </div>
     )
 

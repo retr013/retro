@@ -2,7 +2,7 @@ import React from 'react';
 import MyPost from "./MyPost";
 import ProfileInfo from "./ProfileInfo";
 
-function Profile(props) {
+function Profile() {
     return (
         <div>
             <ProfileInfo/>

@@ -1,15 +1,14 @@
 .profileInfoContainer {
     position: relative;
-    background: #181a31;
-    border: 1px solid #38384f;
     border-radius: 0 0 20px 20px;
     padding-bottom: 10px;
+    background: #171719;
 }
 
 .picB {
     overflow: hidden;
     height: 200px;
-    margin-bottom: 80px;
+    margin-bottom: 85px;
     background-position: center center;
     background-size: cover;
 }
@@ -20,31 +19,34 @@
 }
 
 .profileInfo {
-    background: #181a31;
     margin: 10px;
     padding: 0 10px;
 }
 
 .profileInfoTop {
-    background: #181a31;
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+    align-items: center;
 }
 
 .editButton {
     border: none;
-    background: #25284b;
-    padding: 5px 10px;
+    background: rgba(200, 26, 170, 0.89);
+    padding: 8px 10px;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     color: white;
+    transition: 0.4s ease;
+}
+
+.editButton:hover {
+    background: #f51dd0;
 }
 
 .profileInfoName {
     font-size: 29px;
-    background: #181a31;
     color: white;
 }
 
@@ -58,10 +60,106 @@
     top: 150px;
     left: 20px;
     border-radius: 50%;
-    border: 5px solid #181a31;
+    border: 5px solid #171719;
     z-index: 2;
+    overflow: hidden;
 }
 
-h4 {
+.picEditButton {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    border: none;
+    background: rgba(0, 0, 0, 0.61);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
     color: white;
+    transition: 0.4s ease;
+    text-align: center;
+}
+
+.profilePic:hover > .picEditButton {
+    top: 79%;
+}
+
+.statusText {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.picInput {
+    display: none;
+}
+
+.editButtonContainer {
+    position: relative;
+}
+
+.editButtonMenu {
+    position: absolute;
+    background: #f51dd0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.editButtonMenuItems {
+    padding: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.editButtonMenuItems:hover {
+    background: rgba(250, 250, 250, 0.47);
+}
+.editButtonMenuItems label {
+    cursor: pointer;
+}
+
+.statusInput {
+    height: 21px;
+    width: fit-content;
+    background: #111112;
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+}
+
+.statusInput:disabled {
+    color: #696971;
+}
+
+.statusContainer {
+    width: fit-content;
+}
+
+.loadingPlaceholder {
+    background-color: #ccc;
+    justify-content: center;
+}
+
+.pictureLoaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: #ccc;
+}
+
+.statusLoaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: #ccc;
 }

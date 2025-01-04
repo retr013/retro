@@ -1,6 +1,9 @@
-import axios, {AxiosError} from "axios";
+import axios, {AxiosInstance} from "axios";
+import {LoginFormInputs} from "../components/Login/Login";
+import {StatusType} from "../redux/userProfileReducer";
 
-const instance = axios.create({
+// Create a single Axios instance for API requests
+const instance: AxiosInstance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     withCredentials: true,
     headers: {
@@ -10,33 +13,38 @@ const instance = axios.create({
 })
 
 export const followUserApi = {
-    followUser(userId) {
+    followUser(userId: number) {
         return instance.post(`follow/${userId}`, {})
     },
-    unfollowUser(userId) {
+    unfollowUser(userId: number) {
         return instance.delete(`follow/${userId}`)
     },
-    fetchUsers(count) {
+    fetchUsers(count: number) {
         return instance.get(`users?count=${count ? count : 20}`)
     },
 }
 
 export const profileApi = {
-    fetchProfile(id) {
+    fetchProfile(id: string) {
         return instance.get('profile/' + id)
     },
-    updateStatus(statusText) {
+    updateStatus(statusText: StatusType) {
         return instance.put('profile/status', {status: statusText})
     },
-    getStatus(id) {
+    getStatus(id: string) {
         return instance.get('profile/status/' + id)
+    },
+    setProfilePicture(file: File) {
+        const formData = new FormData();
+        formData.append('image', file)
+        return instance.put('profile/photo', formData)
     }
 }
 export const authMeApi = {
     authUser() {
         return instance.get('auth/me')
     },
-    login(data) {
+    login(data: LoginFormInputs) {
         return instance.post('auth/login', data)
     },
     logout() {
