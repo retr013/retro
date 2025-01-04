@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_app1=self.webpackChunkmy_app1||[]).push([[824],{6824:(e,a,n)=>{n.r(a),n.d(a,{default:()=>s});n(5043);var p=n(5368),r=n(579);function s(){return(0,r.jsx)(r.Fragment,{children:(0,r.jsx)(p.A,{})})}}}]);
+//# sourceMappingURL=824.17ab13f3.chunk.js.map
