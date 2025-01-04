@@ -1,5 +1,5 @@
 .nav {
-    width: 13%;
+    width: 18%;
 }
 
 .navContainer {
@@ -7,6 +7,10 @@
     flex-direction: column;
     font-size: 20px;
     font-weight: 500;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px 20px 20px 0;
+    background: #171719;
 }
 
 .item {
@@ -15,8 +19,26 @@
 
 .itemLink {
     padding: 5px;
-    display: block;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: 0.1s ease;
+}
+
+.itemLinkP {
+    transition: 0.4s ease;
+}
+
+.itemLink:hover {
+    color: #f51dd0;
+}
+
+.itemLink:hover > .itemLinkP {
+    color: #f51dd0;
+}
+
+.itemLink p {
+    margin-left: 10px;
 }
 
 .item a {
@@ -24,14 +46,6 @@
     text-decoration: none;
 }
 
-.item:hover {
-    background: rgba(255, 255, 255, 0.13);
-}
-
-.item:hover:active {
-    background: #212346;
-}
-
 .item:active, .item:focus {
-    background: #212346;
+    background: rgba(255, 255, 255, 0.13);
 }

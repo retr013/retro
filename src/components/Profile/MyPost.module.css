@@ -3,15 +3,22 @@
     flex-direction: column;
     gap: 20px;
     border-radius: 30px;
-    margin-top: 20px
+    margin-top: 20px;
+}
+
+.postsContainer {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    background-color: #1e1e1e;
 }
 
 .container {
-    background: #181a31;
     padding: 30px 20px;
-    border: 1px solid #38384f;
     border-radius: 20px;
     color: white;
+    background: #171719;
 }
 
 ::-webkit-resizer {
@@ -20,51 +27,68 @@
 
 h3 {
     margin-bottom: 20px;
-    background: #181a31;
+    font-size: 2.3rem;
 }
 
-textarea {
-    resize: none;
+.postInput {
     width: 100%;
     color: white;
     border-radius: 10px;
-    padding: 5px 2px;
-    border: none;
-    background: #25284b;
+    padding: 5px 50px 5px 10px;
+    background: #1e1e1e;
     font-size: 16px;
+    border: 1px solid #282828;
+    transition: 0.3s;
 }
 
-textarea::placeholder {
+.postInput:hover {
+    cursor: pointer;
+    border-color: rgba(245, 29, 208, 0.68);
+
+}
+
+.postInput::placeholder {
     color: white;
 }
 
-textarea:focus {
+.postInput:focus {
     outline: 0;
+    border-color: #f51dd0;
 }
 
 .postTextAreaContainer {
     display: flex;
-    background: #25284b;
     border-radius: 10px;
     position: relative;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .postTextAreaContainer button{
     background: rgba(0, 0, 0, 0);
     border: none;
     border-radius: 10px;
-    min-width: 40px;
+    width: 45px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    padding: 0 10px;
 }
 
 .postTextAreaContainer button:hover {
-    background: #32375f;
+    background: #f51dd0;
 }
 
 .sendIcon {
     cursor: pointer;
     color: white;
+    /*background: #f51dd0;*/
 }
 
 .sendIcon svg {
     background: none;
+}
+
+.form {
+    width: 100%;
 }

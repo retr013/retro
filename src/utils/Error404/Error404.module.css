@@ -1,0 +1,12 @@
+.home {
+    border: none;
+    background: rgba(200, 26, 170, 0.89);
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    transition: 0.4s ease;
+    display: block;
+    margin: 0 auto;
+}

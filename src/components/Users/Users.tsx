@@ -1,8 +1,5 @@
-import React, {useEffect, useOptimistic} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import User from "./User";
-import axios from "axios";
-import avatar from '../../assets/img/avatar.png'
-import {useDispatch, useSelector} from "react-redux";
 import {
     changeFollow,
     fetchUsers,
@@ -12,33 +9,35 @@ import {
 } from "../../redux/usersReducer";
 import style from './Users.module.css'
 import {CircularProgress} from "@mui/material";
-import {Navigate} from "react-router-dom";
+import {useAppDispatch, useAppSelector} from "../../redux/redux-store";
+
 
 export default function Users() {
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
-    const {users, loading, followLoading, error, count} = useSelector(state => state.users);
-
-    const isAuthorised = useSelector(state => state.auth.isAuth);
+    const {users, loading, error, count} = useAppSelector(state => state.users);
 
     useEffect(() => {
         dispatch(fetchUsers(count));
     }, [dispatch, count])
 
-    const onButtonClick = (follow, id) => {
+    const onButtonClick = (follow: boolean, id: number) => {
         follow ? dispatch(unfollowUser(id)) : dispatch(followUser(id));
         dispatch(changeFollow(id))
     }
+
+    //using useCallback to prevent unnecessary re-renders
+    const handleFollowClick = useCallback((follow: boolean, id: number) => {
+        onButtonClick(follow, id)
+    }, [])
 
     const onLoadMoreUsers = () => {
         dispatch(loadMoreUsers())
     }
 
     let usersList = users.map(user =>
-        <User key={user.id} img={user.photos.small ? user.photos.small : avatar} fullName={user.name}
-              followStatus={user.followed}
-              status={user.status} id={user.id} onFollowClick={onButtonClick} loading={user.loading}/>
+        <User user={user} onFollowClick={handleFollowClick}/>
     )
 
     if (error) {

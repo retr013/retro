@@ -1,43 +1,57 @@
 .item {
     color: #ffffff;
     display: flex;
-    background: #181a31;
+    gap: 15px;
     align-items: center;
-}
-
-.likeCount {
-    background: #181a31;
-}
-
-.item p {
-    background: #181a31;
-}
-
-.itemContent p {
-    background: #181a31;
+    flex-direction: column;
+    min-width: 130px;
 }
 
 .item img {
-    width: 40px;
+    width: 80px;
     height: 100%;
-    margin-right: 20px;
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    border-radius: 50%;
 }
 
 .postItem {
-    background: #181a31;
     padding: 30px 20px;
-    border: 1px solid #38384f;
-    border-radius: 20px;
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    gap: 20px;
     color: white;
+    border-bottom: 1px solid #333;
+}
+
+.postItem:last-child {
+    border-bottom: none;
 }
 
 .itemContent {
-
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .itemUsername {
+    font-size: 18px;
+    font-weight: 300;
+}
 
+.likeIcon {
+    color: #ffffff;
+    cursor: pointer;
+    margin-right: 3px;
+}
+
+.likeIcon:hover {
+    color: #ff0000;
+}
+
+.likeCount {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
