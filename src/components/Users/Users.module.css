@@ -22,6 +22,8 @@
 
 .loadButtonContainer {
     padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .loading {
@@ -31,4 +33,14 @@
     height: 100%;
     color: white;
     font-size: 50px;
+}
+
+.usersList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 20px;
+    margin: 20px auto;
+    background: #171719;
+    border-radius: 20px;
 }

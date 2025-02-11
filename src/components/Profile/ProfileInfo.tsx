@@ -8,6 +8,7 @@ import ProfileInfoSkeleton from "../../utils/ProfileInfoSkeleton/ProfileInfoSkel
 
 import {useAppDispatch, useAppSelector} from "../../redux/redux-store";
 import {CircularProgress} from "@mui/material";
+import EditIcon from '@mui/icons-material/Edit';
 
 // Accepted image types for file upload
 const ACCEPTED_IMAGE_TYPES = 'image/jpeg,image/png,image/gif,image/bmp,image/webp,image/tiff,image/svg+xml,image/x-icon,.jpg,.jpeg,.png,.gif,.bmp,.webp,.tiff,.tif,.svg,.ico';
@@ -127,10 +128,11 @@ export default function ProfileInfo() {
                     :
                     <div className={style.statusContainer}>
                         {!editMode && !statusLoading ?
-                            <div onClick={() => {
+                            <div className={style.statusContainerText} onClick={() => {
                                 onStatusClick()
                             }}>
                                 <p className={style.statusText}>{userStatus || 'no status yet'}</p>
+                                <EditIcon className={style.editIcon}/>
                             </div>
                             :
                             <input

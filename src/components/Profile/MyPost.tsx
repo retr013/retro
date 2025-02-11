@@ -1,4 +1,4 @@
-import React, {JSX, RefObject, useEffect} from 'react';
+import React, {JSX, useEffect} from 'react';
 import style from './MyPost.module.css'
 import UserPost from "./UserPost/UserPost";
 import {addPost, fetchPosts, updatePost} from "../../redux/profileReducer";
@@ -20,11 +20,9 @@ function MyPost() {
         dispatch(fetchPosts())
     }, [dispatch])
 
-    let newPostElement : RefObject<HTMLInputElement> = React.useRef(null);
-
     // Handle text area change
-    function onPostChange() {
-        let text = newPostElement.current!.value;
+    function onPostChange(event: React.ChangeEvent<HTMLInputElement>) {
+        let text = event.target.value;
         dispatch(updatePost(text))
     }
 
@@ -34,17 +32,17 @@ function MyPost() {
 
     // Render list of posts
     let postElements: JSX.Element[] = elementsList.map(
-        post => <UserPost message={post.body} likes={post.userId} key={post.id}/>
+        (post) => <UserPost message={post.body} likes={post.userId} key={post.id}/>
     )
 
     return (
         <div className={style.post}>
             <div className={style.container}>
-                <h3>What's on your mind?</h3>
+                <h3 className={style.textH3}>What's on your mind?</h3>
                 <div className={style.postTextAreaContainer}>
                     <form className={style.form} onSubmit={handleSubmit(onPostSubmit)}>
                         <input {...register('postInput')} name='postInput' type="text" className={style.postInput}
-                               placeholder='new message' ref={newPostElement} value={newPostText}
+                               placeholder='new message' value={newPostText}
                                onChange={onPostChange}/>
                         <button className={style.sendIcon}><SendIcon/></button>
                     </form>

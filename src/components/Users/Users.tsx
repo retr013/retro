@@ -10,6 +10,7 @@ import {
 import style from './Users.module.css'
 import {CircularProgress} from "@mui/material";
 import {useAppDispatch, useAppSelector} from "../../redux/redux-store";
+import UniButton from "../common/Button/UniButton";
 
 
 export default function Users() {
@@ -50,16 +51,16 @@ export default function Users() {
         <>
             <div className={style.usersContainer}>
                 {loading && <CircularProgress sx={{background: 'none', color: 'white', position: 'absolute'}}/>}
-                {usersList}
+                <div className={style.usersList}>
+                    {usersList}
+                </div>
                 {users.length ?
                     <div className={style.loadButtonContainer}>
-                        <button className={style.loadButton} onClick={onLoadMoreUsers}>
-                            {!loading ? 'More Users' :
-                                <CircularProgress sx={{
-                                    color: 'black',
-                                    background: 'none',
-                                }}/>}
-                        </button>
+                        <UniButton onClick={onLoadMoreUsers} size="lg">{!loading ? 'More Users' :
+                            <CircularProgress sx={{
+                                color: 'black',
+                                background: 'none',
+                            }}/>}</UniButton>
                     </div> : null
                 }
             </div>

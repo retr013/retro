@@ -25,10 +25,9 @@ input {
 .menuSelector {
     outline: none;
     width: 180px;
-    height: 48px;
     border: none;
     background: rgba(200, 26, 170, 0.89);
-    padding: 5px;
+    padding: 7px;
     border-radius: 10px;
     font-size: 20px;
     font-weight: 500;
@@ -44,10 +43,6 @@ input {
 .menuSelector:disabled {
     background: rgba(200, 26, 170, 0.62);
     cursor: no-drop;
-}
-
-.loginInputError {
-    border: 3px solid red;
 }
 
 .loginInput {
@@ -90,4 +85,34 @@ p{
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+}
+
+.userInput {
+    width: 300px;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 50px 5px 10px;
+    background: #1e1e1e;
+    font-size: 16px;
+    border: 1px solid #282828;
+    transition: 0.3s;
+}
+
+.userInput:hover {
+    cursor: pointer;
+    border-color: rgba(245, 29, 208, 0.68);
+
+}
+
+.userInput::placeholder {
+    color: white;
+}
+
+.userInput:focus {
+    outline: 0;
+    border-color: #f51dd0;
+}
+
+.loginInputError {
+    border: 3px solid red;
 }
