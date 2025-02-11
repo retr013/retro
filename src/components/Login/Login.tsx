@@ -7,6 +7,7 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import {CircularProgress} from "@mui/material";
 import {useLocation, useNavigate} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../redux/redux-store";
+import UniButton from "../common/Button/UniButton";
 
 // Validation schema using Zod
 const schema = z.object({
@@ -40,6 +41,7 @@ export default function Login() {
     const {
         register,
         handleSubmit,
+        setValue,
         formState: {errors, isSubmitting}
     } = useForm<LoginFormInputs>(
         {resolver: zodResolver(schema)}
@@ -59,15 +61,19 @@ export default function Login() {
         dispatch(logout())
     }
 
+    const handleSetValue = () => {
+        setValue('email', 'stagnirovat@gmail.com')
+        setValue('password', '111111')
+    };
+
     return (
         <>
             <div className={style.loginContainer}>
                 <h1>Welcome!</h1>
                 {menu === 'welcome' &&
                     <div className={style.loginButtons}>
-                        <button className={style.menuSelector} onClick={() => setMenu('login')}>Login</button>
-                        <button className={style.menuSelector} disabled onClick={() => setMenu('register')}>Register
-                        </button>
+                        <UniButton size={"xlg"} onClick={() => setMenu('login')}>Login</UniButton>
+                        <UniButton size={"xlg"} disabled={true} onClick={() => setMenu('register')}>Login</UniButton>
                     </div>
                 }
                 {menu === 'login' &&
@@ -76,9 +82,9 @@ export default function Login() {
                             <input
                                 placeholder='email'
                                 {...register('email')}
-                                className={!errors.email ? '' : style.loginInputError}
+                                className={`${style.userInput} ${errors.email ? style.loginInputError : ''}`}
                             />
-                            <input type="password" placeholder='password'
+                            <input type="password" placeholder='password' className={`${style.userInput} ${errors.password ? style.loginInputError : ''}`}
                                    {...register('password')}/>
                             <div className={style.rememberMe}>
                                 <input className={style.checkBox} type="checkbox" {...register('rememberMe')}
@@ -86,13 +92,14 @@ export default function Login() {
                                 <p>remember me</p>
                             </div>
                             <input className={style.menuSelector} type="submit" value="Log in"/>
+                            <button className={style.menuSelector} onClick={handleSetValue}>Insert login credentials</button>
                             {loading && <div className={style.loader}><CircularProgress
                                 sx={{background: 'none', color: 'white', position: 'absolute', width: '300px'}}/></div>}
                         </form>
                         {errors.email && <p>{errors.email.message}</p>}
                         {errors.password && <p>{errors.password.message}</p>}
                         {isSubmitting && <p>loading...</p>}
-                        {error ? <p aria-live='polite'>{error}</p> : null}
+                        {error ? <p aria-live='polite'>{error}, incorrect login data</p> : null}
                     </div>
                 }
             </div>

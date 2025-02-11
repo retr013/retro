@@ -1,10 +1,37 @@
 .dialog {
-    background: #181a31;
-    padding: 10px;
-    border: 1px solid #38384f;
+    background: black;
+    padding: 1rem;
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
 .dialogText{
     text-decoration: none;
     color: white;
+}
+
+.messageHeader {
+    padding: 1rem;
+}
+
+.messageHeader h2 {
+    font-weight: 600;
+    color: white;
+}
+
+.userName {
+    color: white;
+    font-weight: 600;
+}
+
+.userLastMessage {
+    color: rgba(250, 250, 250, 0.72);
+    font-weight: 400;
+}
+
+.userImage{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }

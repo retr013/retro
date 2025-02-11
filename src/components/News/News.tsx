@@ -1,12 +1,10 @@
 import React from 'react';
-import style from './News.module.css'
+import InDevelopment from "../../utils/FeatureInDevelopment/Development";
 
-type newsProps = {
-    a: string
-}
-
-export default function News({a}: newsProps) {
+export default function News() {
     return (
-        <div className={style.item}>props.a = {a}</div>
+        <>
+            <InDevelopment/>
+        </>
     )
 }

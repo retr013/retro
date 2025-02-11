@@ -47,5 +47,16 @@
 }
 
 .item:active, .item:focus {
+    border-radius: 20px;
     background: rgba(255, 255, 255, 0.13);
+}
+
+/* Hide itemLinkP on screens smaller than 1024px */
+@media (max-width: 1024px) {
+    .itemLinkP {
+        display: none;
+    }
+    .nav {
+        width: fit-content;
+    }
 }

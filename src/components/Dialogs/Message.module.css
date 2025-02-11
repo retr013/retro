@@ -3,11 +3,20 @@
 }
 
 .message {
-    background: #928282;
-    padding: 5px;
-    border-radius: 15px;
+    color: white;
 }
 
-.messageContainer:nth-child(odd) {
-    justify-content: end;
+.message h3 {
+    font-size: 1.3rem;
+    margin: 0;
+}
+/*.messageContainer:nth-child(odd) {*/
+/*    justify-content: end;*/
+/*}*/
+
+.avatar img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
 }

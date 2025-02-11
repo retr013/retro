@@ -25,7 +25,7 @@
     display: none;
 }
 
-h3 {
+.textH3 {
     margin-bottom: 20px;
     font-size: 2.3rem;
 }
@@ -82,7 +82,6 @@ h3 {
 .sendIcon {
     cursor: pointer;
     color: white;
-    /*background: #f51dd0;*/
 }
 
 .sendIcon svg {

@@ -3,6 +3,8 @@ import style from './User.module.css'
 import {NavLink} from "react-router-dom";
 import {CircularProgress} from "@mui/material";
 import avatar from '../../assets/img/avatar.png'
+import UniButton from "../common/Button/UniButton";
+
 
 import {UserType} from "../../redux/usersReducer";
 
@@ -21,13 +23,15 @@ function User({user, onFollowClick}: UserProps) {
             </NavLink>
             <div className={style.info}>
                 <div>
-                    <h2>{user.name}</h2>
+                    <h2 className={style.userName}>{user.name}</h2>
                 </div>
                 <div>
-                    <button className={style.button}
-                            disabled={user.loading}
-                            onClick={() => onFollowClick(user.followed, user.id)}
-                            aria-busy={user.loading}
+                    {user.status && <p>{user.status}</p>}
+                </div>
+                <div>
+                    <UniButton disabled={user.loading}
+                        onClick={() => onFollowClick(user.followed, user.id)}
+                        aria-busy={user.loading}
                     >
                         {user.loading ?
                             user.loading && <CircularProgress style={{
@@ -36,10 +40,7 @@ function User({user, onFollowClick}: UserProps) {
                             }} sx={{background: 'none', color: 'black'}}/>
                             :
                             user.followed ? 'Unfollow' : 'Follow'}
-                    </button>
-                </div>
-                <div>
-                    {user.status && <p>{user.status}</p>}
+                    </UniButton>
                 </div>
             </div>
         </article>

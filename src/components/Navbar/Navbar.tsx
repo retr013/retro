@@ -42,21 +42,9 @@ function Navbar() {
                         </NavLink>
                     </li>
                     <li className={styles.item}>
-                        <NavLink className={styles.itemLink} to="/news" aria-label="News">
-                            <NewspaperIcon aria-hidden="true" />
-                            <p className={styles.itemLinkP}>News</p>
-                        </NavLink>
-                    </li>
-                    <li className={styles.item}>
-                        <NavLink className={styles.itemLink} to="/music" aria-label="Music">
-                            <MusicNoteIcon aria-hidden="true" />
-                            <p className={styles.itemLinkP}>Music</p>
-                        </NavLink>
-                    </li>
-                    <li className={styles.item}>
                         <NavLink className={styles.itemLink} to="/settings" aria-label="Settings">
                             <SettingsIcon aria-hidden="true" />
-                            <p className={styles.itemLinkP}>Settings</p>
+                            <p className={styles.itemLinkP}>Technology</p>
                         </NavLink>
                     </li>
                 </ul>
