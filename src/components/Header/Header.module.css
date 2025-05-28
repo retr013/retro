@@ -2,41 +2,54 @@
     height: 70px;
     display: flex;
     align-items: center;
-
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
 
 .logoText {
-    font-size: 35px;
-    font-weight: 200;
+    font-size: 32px;
+    font-weight: 600;
     color: white;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.logoText:hover {
+    transform: scale(1.05);
 }
 
 .logoSpan {
     color: #f51dd0;
+    font-weight: 700;
 }
 
 .header {
-    border-bottom: #f51dd0 2px solid;
-    background: #171719;
+    background: rgba(23, 23, 25, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(245, 29, 208, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .headerContainer {
+    max-width: 1600px;
     width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 24px;
+    height: 70px;
 }
 
 .loginContainer {
     color: white;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 a {
@@ -46,17 +59,53 @@ a {
 
 .logout {
     border: none;
-    background: rgba(200, 26, 170, 0.89);
-    padding: 5px;
-    border-radius: 10px;
-    font-size: 13px;
+    background: rgba(245, 29, 208, 0.1);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
-    color: white;
-    transition: 0.4s ease;
+    color: #f51dd0;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(245, 29, 208, 0.2);
+}
+
+.logout:hover {
+    background: rgba(245, 29, 208, 0.2);
+    transform: translateY(-1px);
+}
+
+.logout:active {
+    transform: translateY(0);
 }
 
 .logoutContainer {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
+}
+
+.logoutContainer p {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+    .headerContainer {
+        padding: 0 16px;
+    }
+    
+    .logoText {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+    
+    .logoutContainer {
+        gap: 12px;
+    }
+    
+    .logout {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
 }

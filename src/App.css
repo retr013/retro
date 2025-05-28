@@ -63,6 +63,7 @@ body {
 .app-wrapper {
     margin: 0 auto;
     width: 100%;
+    max-width: 1600px;
     display: flex;
     padding-inline: 20px;
     height: calc(100vh - 70px);
@@ -70,4 +71,17 @@ body {
 
 .content {
     width: 100%;
+}
+
+.container {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
 }

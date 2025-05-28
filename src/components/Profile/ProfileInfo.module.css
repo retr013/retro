@@ -1,16 +1,31 @@
 .profileInfoContainer {
     position: relative;
-    border-radius: 0 0 20px 20px;
-    padding-bottom: 10px;
-    background: #171719;
+    border-radius: 0 0 24px 24px;
+    padding-bottom: 20px;
+    background: rgba(23, 23, 25, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .picB {
     overflow: hidden;
-    height: 200px;
+    height: 240px;
     margin-bottom: 85px;
     background-position: center center;
     background-size: cover;
+    position: relative;
+}
+
+.picB::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, rgba(23, 23, 25, 0.95), transparent);
 }
 
 .picBimg {
@@ -19,50 +34,69 @@
 }
 
 .profileInfo {
-    margin: 10px;
-    padding: 0 10px;
+    margin: 20px;
+    padding: 0 20px;
 }
 
 .profileInfoTop {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .editButton {
     border: none;
-    background: rgba(200, 26, 170, 0.89);
-    padding: 8px 10px;
-    border-radius: 10px;
-    font-size: 16px;
+    background: rgba(245, 29, 208, 0.1);
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
     cursor: pointer;
-    color: white;
-    transition: 0.4s ease;
+    color: #f51dd0;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(245, 29, 208, 0.2);
+    white-space: nowrap;
 }
 
 .editButton:hover {
-    background: #f51dd0;
+    background: rgba(245, 29, 208, 0.2);
+    transform: translateY(-1px);
+}
+
+.editButton:active {
+    transform: translateY(0);
 }
 
 .profileInfoName {
-    font-size: 29px;
+    font-size: 28px;
+    font-weight: 600;
     color: white;
+    letter-spacing: -0.5px;
+    word-break: break-word;
 }
 
 .profilePic {
     position: absolute;
     background-position: center center;
     background-size: cover;
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
     display: block;
-    top: 150px;
-    left: 20px;
+    top: 165px;
+    left: 24px;
     border-radius: 50%;
-    border: 5px solid #171719;
+    border: 4px solid rgba(23, 23, 25, 0.95);
     z-index: 2;
     overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.profilePic:hover {
+    transform: scale(1.02);
 }
 
 .picEditButton {
@@ -70,24 +104,27 @@
     width: 100%;
     top: 100%;
     border: none;
-    background: rgba(0, 0, 0, 0.61);
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 8px 12px;
+    border-radius: 0 0 50% 50%;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
     color: white;
-    transition: 0.4s ease;
+    transition: all 0.3s ease;
     text-align: center;
+    backdrop-filter: blur(4px);
 }
 
 .profilePic:hover > .picEditButton {
-    top: 79%;
+    top: 75%;
 }
 
 .statusText {
-    color: white;
-    font-size: 1.1rem;
-    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
 }
 
 .picInput {
@@ -100,49 +137,77 @@
 
 .editButtonMenu {
     position: absolute;
-    background: #f51dd0;
+    right: 0;
+    top: 100%;
+    margin-top: 8px;
+    background: rgba(23, 23, 25, 0.95);
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    border-radius: 10px;
-    font-size: 15px;
+    gap: 4px;
+    border-radius: 12px;
+    font-size: 14px;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    min-width: 200px;
+    z-index: 10;
 }
 
 .editButtonMenuItems {
-    padding: 5px;
+    padding: 8px 12px;
     background: none;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    text-align: left;
+    width: 100%;
 }
 
 .editButtonMenuItems:hover {
-    background: rgba(250, 250, 250, 0.47);
+    background: rgba(255, 255, 255, 0.1);
 }
+
 .editButtonMenuItems label {
     cursor: pointer;
+    display: block;
+    width: 100%;
 }
 
 .statusInput {
-    height: 21px;
-    width: fit-content;
-    background: #111112;
-    color: rgb(255, 255, 255);
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: none;
+    height: 24px;
+    width: 100%;
+    min-width: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.statusInput:focus {
+    outline: none;
+    border-color: #f51dd0;
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .statusInput:disabled {
-    color: #696971;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .statusContainer {
-    width: fit-content;
+    width: 100%;
+    max-width: 600px;
 }
 
 .loadingPlaceholder {
-    background-color: #ccc;
+    background-color: rgba(255, 255, 255, 0.1);
     justify-content: center;
 }
 
@@ -152,7 +217,7 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    background: #ccc;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .statusLoaderContainer {
@@ -161,23 +226,124 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    background: #ccc;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .statusContainerText {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.7);
     display: flex;
     align-items: center;
-    font-size: 1.1rem;
-    gap: 5px;
+    font-size: 16px;
+    gap: 8px;
+    padding: 8px 0;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    word-break: break-word;
+}
+
+.statusContainerText:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .editIcon {
     cursor: pointer;
-    transition: 0.3s;
-    height: 10px;
+    transition: all 0.2s ease;
+    height: 16px;
+    width: 16px;
+    opacity: 0.7;
 }
 
 .editIcon:hover {
-    color: white;
+    color: #f51dd0;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .profileInfoContainer {
+        border-radius: 0 0 16px 16px;
+        padding-bottom: 16px;
+    }
+    
+    .picB {
+        height: 180px;
+        margin-bottom: 70px;
+    }
+    
+    .profilePic {
+        width: 100px;
+        height: 100px;
+        top: 130px;
+        left: 16px;
+        border-width: 3px;
+    }
+    
+    .profileInfo {
+        margin: 16px;
+        padding: 0 16px;
+    }
+    
+    .profileInfoTop {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .profileInfoName {
+        font-size: 24px;
+    }
+    
+    .editButton {
+        padding: 8px 12px;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .statusContainer {
+        width: 100%;
+    }
+    
+    .statusContainerText {
+        font-size: 15px;
+        padding: 8px;
+    }
+    
+    .editButtonMenu {
+        position: fixed;
+        left: 16px;
+        right: 16px;
+        top: auto;
+        bottom: 16px;
+        margin: 0;
+        min-width: auto;
+        border-radius: 16px;
+    }
+    
+    .editButtonMenuItems {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .picB {
+        height: 150px;
+        margin-bottom: 60px;
+    }
+    
+    .profilePic {
+        width: 80px;
+        height: 80px;
+        top: 110px;
+    }
+    
+    .profileInfoName {
+        font-size: 20px;
+    }
+    
+    .statusContainerText {
+        font-size: 14px;
+    }
 }

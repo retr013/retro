@@ -1,36 +1,48 @@
 .nav {
     width: 18%;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .navContainer {
     display: flex;
     flex-direction: column;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
-    border-radius: 20px;
-    padding: 10px;
+    border-radius: 16px;
+    padding: 16px;
     margin: 20px 20px 20px 0;
-    background: #171719;
+    background: rgba(23, 23, 25, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .item {
-    padding: 10px 0;
+    padding: 8px 0;
 }
 
 .itemLink {
-    padding: 5px;
-    border-radius: 5px;
+    padding: 12px 16px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    transition: 0.1s ease;
+    transition: all 0.2s ease;
+    color: #fff;
+    text-decoration: none;
 }
 
 .itemLinkP {
-    transition: 0.4s ease;
+    transition: all 0.2s ease;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .itemLink:hover {
-    color: #f51dd0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(4px);
 }
 
 .itemLink:hover > .itemLinkP {
@@ -38,7 +50,7 @@
 }
 
 .itemLink p {
-    margin-left: 10px;
+    margin-left: 12px;
 }
 
 .item a {
@@ -47,8 +59,18 @@
 }
 
 .item:active, .item:focus {
-    border-radius: 20px;
+    border-radius: 12px;
     background: rgba(255, 255, 255, 0.13);
+}
+
+/* Active link styles */
+.itemLink.active {
+    background: rgba(245, 29, 208, 0.1);
+    color: #f51dd0;
+}
+
+.itemLink.active > .itemLinkP {
+    color: #f51dd0;
 }
 
 /* Hide itemLinkP on screens smaller than 1024px */
@@ -58,5 +80,8 @@
     }
     .nav {
         width: fit-content;
+    }
+    .itemLink {
+        padding: 12px;
     }
 }
